@@ -13,6 +13,7 @@ public class SrtSynchronizer {
 	private StringBuilder builder;
 	private FileWriter writer;
 	private String fileName;
+	private String newFileName;
 	private Time startTime;
 	private Time endTime;
 	
@@ -21,11 +22,12 @@ public class SrtSynchronizer {
 		parser.parse(fileName);
 	}
 	
-	public SrtSynchronizer(Variation variation, String fileName) {
+	public SrtSynchronizer(Variation variation, String fileName, String newFileName) {
 		this.variation = variation;
 		builder = new StringBuilder();
 		writer = new FileWriter();
 		this.fileName  = fileName;
+		this.newFileName  = newFileName;
 	}
 
 	public void synch(String line){
@@ -44,7 +46,7 @@ public class SrtSynchronizer {
 	}
 	
 	public void write() throws IOException{
-		writer.write("synched-" + fileName, builder.toString());		
+		writer.write(newFileName, builder.toString());		
 		builder.setLength(0);
 	}	
 
