@@ -28,6 +28,7 @@ public class MainWindow extends JFrame{
 
 	public MainWindow(){
 		super("SRT Synch v0.1 . http://www.raydelto.org");
+		setResizable(false);
 		setLayout(new GridLayout(5, 1));
 		//Title
 		JPanel pnlTitle = new JPanel();
