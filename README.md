@@ -1,2 +1,3 @@
-# srtsynch
-A simple tool for synchronizing SRT subtitles files.
+# SRT Synch
+
+This a simple tool for synchronizing SRT subtitles files.
