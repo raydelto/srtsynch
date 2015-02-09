@@ -4,7 +4,6 @@
 package org.raydelto.srtsynch;
 
 import javax.swing.UIManager;
-
 import org.raydelto.srtsynch.ui.MainWindow;
 
 public class SrtSynch {
@@ -16,5 +15,4 @@ public class SrtSynch {
 			System.err.println("Cannot adopt host Operating System Look and feel: " + e);
 		}		new MainWindow();
 	}
-
 }

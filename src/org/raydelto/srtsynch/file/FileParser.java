@@ -6,7 +6,6 @@ package org.raydelto.srtsynch.file;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.raydelto.srtsynch.srt.SrtSynchronizer;
 
 public class FileParser {

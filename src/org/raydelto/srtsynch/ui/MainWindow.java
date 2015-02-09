@@ -7,7 +7,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -15,7 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import org.raydelto.srtsynch.srt.SrtSynchronizer;
 import org.raydelto.srtsynch.srt.Variation;
 import org.raydelto.srtsynch.ui.filefilters.SrtFileFilter;
@@ -24,8 +22,6 @@ import org.raydelto.srtsynch.ui.listeners.NumericListener;
 public class MainWindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
-
-
 	public MainWindow(){
 		super("SRT Synch v0.1 . http://www.raydelto.org");
 		setResizable(false);
@@ -142,5 +138,4 @@ public class MainWindow extends JFrame{
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-
 }

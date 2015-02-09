@@ -4,7 +4,6 @@
 package org.raydelto.srtsynch.srt;
 
 import java.io.IOException;
-
 import org.raydelto.srtsynch.file.FileParser;
 import org.raydelto.srtsynch.file.FileWriter;
 
@@ -48,6 +47,5 @@ public class SrtSynchronizer {
 	public void write() throws IOException{
 		writer.write(newFileName, builder.toString());		
 		builder.setLength(0);
-	}	
-
+	}
 }

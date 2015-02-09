@@ -30,6 +30,5 @@ public class Variation {
 		this.hours = hours;
 		this.minutes = minutes;
 		this.seconds = seconds;
-	}
-	
+	}	
 }
