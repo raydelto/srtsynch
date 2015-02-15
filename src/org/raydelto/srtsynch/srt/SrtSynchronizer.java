@@ -4,6 +4,8 @@
 package org.raydelto.srtsynch.srt;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import org.raydelto.srtsynch.file.FileParser;
 import org.raydelto.srtsynch.file.FileWriter;
 
@@ -14,8 +16,8 @@ public class SrtSynchronizer {
 	private String fileName;
 	private String newFileName;
 	private Time startTime;
-	private Time endTime;
-	
+	private Time endTime;	
+
 	public void start() throws IOException{
 		FileParser parser = new FileParser(this);
 		parser.parse(fileName);
@@ -28,6 +30,12 @@ public class SrtSynchronizer {
 		this.fileName  = fileName;
 		this.newFileName  = newFileName;
 	}
+	
+	public SrtSynchronizer(Variation variation) {
+		this.variation = variation;
+		builder = new StringBuilder();
+		writer = new FileWriter();
+	}	
 
 	public void synch(String line){
 		if(line.contains(":") && line.contains(",") && line.contains("-") && line.contains(">")){
@@ -40,12 +48,16 @@ public class SrtSynchronizer {
 			
 		}else{
 			builder.append(line).append("\n");
-		}
-		
+		}		
 	}
 	
 	public void write() throws IOException{
 		writer.write(newFileName, builder.toString());		
+		builder.setLength(0);
+	}
+	
+	public void write(PrintWriter writer) throws IOException{
+		writer.println(builder.toString());		
 		builder.setLength(0);
 	}
 }
