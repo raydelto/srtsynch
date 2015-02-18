@@ -7,6 +7,7 @@
 <title>Free SRT Synchronizing tool</title>
 
 <script src="js/scripts.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -47,7 +48,8 @@
 		</table>
 		</form>
 		
-		<p><b>This web app is open source. You see its source code at <a href="https://github.com/raydelto/srtsynch">GitHub</a> and make it better.</b></p>
+		<p><b>This web app is open source. You see its source code at <a href="https://github.com/raydelto/srtsynch" target="new">GitHub</a> and make it better.</b></p>
+		<p><b>You can download the Java Desktop version of this app from  <a href="http://www.raydelto.org/bin/SrtSynch.jar" target="new">this link</a>.</b></p>
 		
 	</font>
 </div>
