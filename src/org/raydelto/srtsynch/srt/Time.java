@@ -75,6 +75,14 @@ public class Time {
 		second += var.getSeconds();
 		
 		//adjusting values, converting minutes to hours, seconds to minutes if necessary
+		if(second<0){
+			minute -= 1;
+			second += 60;
+		}
+		if(minute<0){
+			minute+=60;
+			hour-=1;
+		}
 		if(minute>59){
 			hour += (minute / 60);
 			minute = minute % 60;
