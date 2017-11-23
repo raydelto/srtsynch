@@ -11,7 +11,9 @@ public class NumericListener extends KeyAdapter {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
-			e.consume();
+			if(e.getKeyChar() != 45) {
+				e.consume();
+			}			
 		}
 	}
 }
