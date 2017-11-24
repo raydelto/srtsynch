@@ -1,21 +1,85 @@
 @CHARSET "ISO-8859-1";
 /* unvisited link */
 a:link {
-  color: #FFFFFF;
-
+	color: #FFFFFF;
 }
 
 /* visited link */
 a:visited {
-    color: #FF0000;
+	color: #FF0000;
 }
 
 /* mouse over link */
 a:hover {
-    color: #FFE6FF;
+	color: #FFE6FF;
 }
 
 /* selected link */
 a:active {
-    color: #F0FFFF;
+	color: #F0FFFF;
+}
+
+body {
+	background: #D5D5D5;
+}
+
+.body-container {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.header1 {
+	color: brown;
+	font-size: 26px;
+}
+
+.header2 {
+	font-size: 17px;
+	color: darkblue;
+}
+
+.instructions-box {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.menu-container {
+	padding-bottom: 20px;
+	margin-bottom: 24px;
+	background: #96858F;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 15px;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	padding-top: 20px;
+	align-items: center;
+}
+
+.column {
+	font-size: 19px;
+	display: flex;
+	flex-direction: row;
+	width: 175px;
+}
+
+.form-element {
+	font-size: 19px;
+	width: 250px;
+	height: 30px;
+	border-radius: 20px;
+	width: 250px;
+}
+
+.srt-button {
+	width: 400px;
+	height: 48px;
+	margin-top: 25px;
+	background: #6D7993;
+	color: white;
+	font-size: 25px;
 }

@@ -7,51 +7,81 @@
 <title>Free SRT Synchronizing tool</title>
 
 <script src="js/scripts.js"></script>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
 
 </head>
-<body bgcolor="black">
-<div align="center">
+<body>
+<div class="body-container">
 <%
 	if(request.getAttribute("message") !=null){
 %>
 	<div id="message">
 		<font color="red">
-			<h4><%= request.getAttribute("message") %></h4>	
+			<h4><%= request.getAttribute("message") %></h4>
 		</font>
 	</div>
 
 <%} %>
-	<font color="white">
-		<h3>Upload the SRT file that you would like to syncrhonize</h3>
-		<h4>You may specify negative or positive values depending if you want to add or substract time to the original SRT file.</h3>
+	<div class="main-container">
+		<div class="instructions-box">
+			<div class="header1">Upload the SRT file that you would like to syncrhonize</div>
+			<div class="header2">You may specify negative or positive values depending if you want to add or substract time to the original SRT file</div>
+		</div>
+		
 		<form action="Syncrhonize" method="post" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td>Srt file</td><td><input type="file" name="file"/></td>
-			</tr>
-			<tr>
-				<td>Hours</td><td><input  type="number"  onkeypress="return isNumber(event)"  value="0" name="hours" /></td>
-			</tr>
-			<tr>
-				<td>Minutes</td><td><input  type="number"  onkeypress="return isNumber(event)" value="0" name="minutes"/></td>
-			</tr>
-			<tr>
-				<td>Seconds</td><td><input  type="number"  onkeypress="return isNumber(event)" value="0" name="seconds"/></td>
-			</tr>
-			<tr>
-			<td colspan="2">
-				<input type="submit" value="Synchronize"/ style="width:100%" onclick="hideMessage()">
-			</td>
-			</tr>			
-		</table>
+		<div class="menu-container">
+			<div class="row">
+				<div class="column">
+					<label>Srt file</label>
+				</div>
+				<div class="column">
+					<input type="file" name="file" class="form-element"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column">
+					<label>Hours</label>
+				</div>
+				<div class="column">
+					<input  type="number" onkeypress="return isNumber(event)"  value="0" name="hours" class="form-element"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column">
+					<label>Minutes</label>
+				</div>
+				<div class="column">
+					<input  type="number" onkeypress="return isNumber(event)"  value="0" name="minutes" class="form-element"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column">
+					<label>Seconds</label>
+				</div>
+				<div class="column">
+					<input  type="number" onkeypress="return isNumber(event)"  value="0" name="seconds" class="form-element"/>
+				</div>
+			</div>
+
+			<div class="button-container">
+				<input type="submit" value="Synchronize" onclick="hideMessage()" class="srt-button">
+			</div>
+		</div>
 		</form>
-		
-		<p><b>This web app is open source. You see its source code at <a href="https://github.com/raydelto/srtsynch" target="new">GitHub</a> and make it better.</b></p>
-		<p><b>You can download the Java Desktop version of this app from  <a href="http://www.raydelto.org/bin/SrtSynch.jar" target="new">this link</a>.</b></p>
-		
-	</font>
+		<div class="instructions-box">
+			<div class="header2">
+				This web app is open source. You see its source code at <a href="https://github.com/raydelto/srtsynch" target="new">GitHub</a> and make it better.
+			</div>
+			<div class="header2">
+				You can download the Java Desktop version of this app from  <a href="http://www.raydelto.org/bin/SrtSynch.jar" target="new">this link</a>.
+			</div>
+		</div>
+	</div>
 </div>
 
 </body>
