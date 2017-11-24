@@ -14,6 +14,18 @@
 </head>
 <body>
 <div class="body-container">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- srt-synch -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7663037025981550"
+     data-ad-slot="8566604631"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 <%
 	if(request.getAttribute("message") !=null){
 %>
@@ -75,7 +87,7 @@
 		</form>
 		<div class="instructions-box">
 			<div class="header2">
-				This web app is open source. You see its source code at <a href="https://github.com/raydelto/srtsynch" target="new">GitHub</a> and make it better.
+				This web app is open source. You can see its source code at <a href="https://github.com/raydelto/srtsynch" target="new">GitHub</a> and make it better.
 			</div>
 			<div class="header2">
 				You can download the Java Desktop version of this app from  <a href="http://www.raydelto.org/bin/SrtSynch.jar" target="new">this link</a>.
