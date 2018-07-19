@@ -15,16 +15,16 @@
 <body>
 <div class="body-container">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- srt-synch -->
+<!-- srtsynch -->
 <ins class="adsbygoogle"
      style="display:block"
-     data-ad-client="ca-pub-7663037025981550"
-     data-ad-slot="8566604631"
-     data-ad-format="auto"></ins>
+     data-ad-client="ca-pub-4149796698660066"
+     data-ad-slot="3475790328"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
 
 <%
 	if(request.getAttribute("message") !=null){
