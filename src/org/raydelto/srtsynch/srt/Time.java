@@ -125,7 +125,7 @@ public class Time {
 			second = second % 60;
 		}if(millisecond>999){
 			second += (millisecond / 1000);
-			millisecond = second % 1000;
+			millisecond = millisecond % 1000;
 		}
 		
 		if(hour < 0) {
