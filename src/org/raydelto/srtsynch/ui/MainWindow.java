@@ -33,7 +33,7 @@ public class MainWindow extends JFrame{
 		
 		//Settings 
 		JPanel pnlSettings = new JPanel();
-		pnlSettings.setLayout(new GridLayout(1,6));
+		pnlSettings.setLayout(new GridLayout(1,8));
 		pnlSettings.add(new JLabel("Hours: "));
 		
 		final JTextField txtHours = new JTextField(2);		
@@ -43,11 +43,18 @@ public class MainWindow extends JFrame{
 		txtMinutes.addKeyListener(numeric);
 		final JTextField txtSeconds = new JTextField(2);
 		txtSeconds.addKeyListener(numeric);		
+		final JTextField txtMilliseconds = new JTextField(2);
+		txtMilliseconds.addKeyListener(numeric);		
+		
 		pnlSettings.add(txtHours);
 		pnlSettings.add(new JLabel("Minutes: "));
 		pnlSettings.add(txtMinutes);
 		pnlSettings.add(new JLabel("Seconds: "));
 		pnlSettings.add(txtSeconds);
+		pnlSettings.add(new JLabel("Milliseconds: "));
+		pnlSettings.add(txtMilliseconds);
+
+		
 		add(pnlSettings);
 		
 		//Original SRT File
@@ -121,7 +128,7 @@ public class MainWindow extends JFrame{
 					txtSeconds.setText("0");
 				}
 
-				SrtSynchronizer synch = new SrtSynchronizer(new Variation(Integer.parseInt(txtHours.getText()), Integer.parseInt(txtMinutes.getText()), Integer.parseInt(txtSeconds.getText())), txtOriginal.getText(), txtDestination.getText());
+				SrtSynchronizer synch = new SrtSynchronizer(new Variation(Integer.parseInt(txtHours.getText()), Integer.parseInt(txtMinutes.getText()), Integer.parseInt(txtSeconds.getText()), Integer.parseInt(txtMilliseconds.getText())), txtOriginal.getText(), txtDestination.getText());
 				try {
 					synch.start();
 					JOptionPane.showMessageDialog(MainWindow.this,"File " + txtOriginal.getText() + " has been successfully Synched", "File synched", JOptionPane.INFORMATION_MESSAGE);
