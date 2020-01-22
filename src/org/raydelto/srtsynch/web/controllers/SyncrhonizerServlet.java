@@ -60,10 +60,11 @@ public class SyncrhonizerServlet extends HttpServlet {
 			int hours = Integer.parseInt(getValue(request.getPart("hours")));
 			int minutes = Integer.parseInt(getValue(request.getPart("minutes")));
 			int seconds = Integer.parseInt(getValue(request.getPart("seconds")));
+			int milliseconds = Integer.parseInt(getValue(request.getPart("milliseconds")));
 			Part originalFile = request.getPart("file");			
 		    String fileName = getFileName(originalFile);		
 			BufferedReader fileReader = new BufferedReader(new InputStreamReader(originalFile.getInputStream(), Charset.forName("ISO-8859-15")));
-			SrtSynchronizer synchonizer = new SrtSynchronizer(new Variation(hours, minutes, seconds));
+			SrtSynchronizer synchonizer = new SrtSynchronizer(new Variation(hours, minutes, seconds, milliseconds));
 			String line = null;
 			while( (line = fileReader.readLine()) != null){
 				synchonizer.synch(line);

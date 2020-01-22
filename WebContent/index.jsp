@@ -38,7 +38,7 @@
 <%} %>
 	<div class="main-container">
 		<div class="instructions-box">
-			<div class="header1">Upload the SRT file that you would like to syncrhonize</div>
+			<div class="header1">Upload the SRT file that you would like to synchronize</div>
 			<div class="header2">You may specify negative or positive values depending if you want to add or substract time to the original SRT file</div>
 		</div>
 		
@@ -79,6 +79,16 @@
 					<input  type="number" onkeypress="return isNumber(event)"  value="0" name="seconds" class="form-element"/>
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="column">
+					<label>Milliseconds</label>
+				</div>
+				<div class="column">
+					<input  type="number" onkeypress="return isNumber(event)"  value="0" name="milliseconds" class="form-element"/>
+				</div>
+			</div>
+			
 
 			<div class="button-container">
 				<input type="submit" value="Synchronize" onclick="hideMessage()" class="srt-button">
