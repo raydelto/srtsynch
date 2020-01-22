@@ -9,8 +9,7 @@ public class Time {
 	private int hour;
 	private int minute;
 	private int second;
-	//Handling it as String since we are not doing any calculations on this value
-	private String millisecond;
+	private int millisecond;
 	
 	public int getHour() {
 		return hour;
@@ -36,7 +35,7 @@ public class Time {
 		this.second = second;
 	}
 	
-	public Time(int hour, int minute, int second, String millisecond) {
+	public Time(int hour, int minute, int second, int millisecond) {
 		super();
 		this.hour = hour;
 		this.minute = minute;
@@ -50,31 +49,54 @@ public class Time {
 		hour = Integer.parseInt(tokenizer.nextToken());
 		minute = Integer.parseInt(tokenizer.nextToken());
 		second = Integer.parseInt(tokenizer.nextToken());
-		millisecond = parts[1].trim();		
+		millisecond = Integer.parseInt(parts[1].trim());		
 	}
 	
-	public String getMillisecond() {
+	public int getMillisecond() {
 		return millisecond;
 	}
-	public void setMillisecond(String millisecond) {
+	
+	public void setMillisecond(int millisecond) {
 		this.millisecond = millisecond;
 	}
 
 	@Override
 	public String toString() {
-		return addZeros(hour) + ":" + addZeros(minute) +":" + addZeros(second) + "," + millisecond;
+		return addZeros(hour) + ":" + addZeros(minute) +":" + addZeros(second) + "," + addZerosMilli(millisecond);
 	}
 	
-	String addZeros(int number){
-		return number <= 9 ? "0" + number : number+"";		
+	private String addZerosMilli(int number){
+		if(number <= 9){
+			return  "00" + number;	
+		}else if(number <= 99){
+			return  "0" + number;				
+		}else
+		{
+			return number+"";
+		}
+	}
+	
+	private String addZeros(int number){
+		return number <= 9 ? "0" + number : number+"";
 	}
 	
 	void change(Variation var){
 		hour += var.getHours();
 		minute += var.getMinutes();
 		second += var.getSeconds();
+		millisecond += var.getMilliseconds();
 		
-		//adjusting values, converting minutes to hours, seconds to minutes if necessary
+		//adjusting values, converting minutes to hours, seconds to minutes and milliseconds to seconds if necessary
+		
+		if(millisecond<0){
+			if(second > 0) {
+				second -= 1;
+				millisecond += 1000;				
+			}else {
+				second = 0;
+				millisecond = 0;
+			}
+		}	
 		if(second<0){
 			if(minute > 0) {
 				minute -= 1;
@@ -93,6 +115,7 @@ public class Time {
 				hour = 0;
 			}
 		}
+		
 		if(minute>59){
 			hour += (minute / 60);
 			minute = minute % 60;
@@ -100,7 +123,11 @@ public class Time {
 		if(second>59){
 			minute += (second / 60);
 			second = second % 60;
+		}if(millisecond>999){
+			second += (millisecond / 1000);
+			millisecond = millisecond % 1000;
 		}
+		
 		if(hour < 0) {
 			hour = 0;
 		}
