@@ -23,7 +23,7 @@ public class MainWindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	public MainWindow(){
-		super("SRT Synch v0.1 . http://www.raydelto.org");
+		super("SRT Synch v1.2 . http://www.raydelto.org");
 		setResizable(false);
 		setLayout(new GridLayout(5, 1));
 		//Title
